@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+body {
+    margin: 0 !important;
+    padding: 0;
+    font-family:     'Space Grotesk', sans-serif;
+    font-size: 18px;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+
+$mobile-breakpoint: 1000px;
+
+@media (max-width: $mobile-breakpoint) {
+    .container {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .layer-1 {
+        position: absolute;
+        width: 400px;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        z-index: 1;
+
+        .left {
+            width: 100%;
+            height: 40%;
+            background-image: url(./images/bg-main-mobile.png);
+            background-size: cover;
+        }
+
+        .right {
+            width: 100%;
+            height: 60%;
+            background-color: hsl(270, 3%, 87%);
+        }
+    }
+
+    .layer-2 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 400px;
+        height: 100vh;
+
+        .top {
+            width: 100%;
+            height: 45%;
+            position: relative;
+
+            .card {
+                position: absolute;
+                width: 250px;
+                height: 150px;
+                border-radius: 15px;
+            }
+
+            .frontCard {
+                z-index: 4;
+                bottom: 0;
+                left: 25px;
+                background-image: url(./images/bg-card-front.png);
+                background-size: cover;
+                background-position: center;
+
+                .info {
+                    position: absolute;
+                    left: 25px;
+                }
+
+                .white-circle {
+                    top: 15px;
+                    width: 30px;
+                    height: 30px;
+                    background-color: whitesmoke;
+                    border-radius: 50%;
+                }
+
+                .white-border-circle {
+                    top: 25px;
+                    left: 70px;
+                    width: 15px;
+                    height: 15px;
+                    border: 2px solid white;
+                    border-radius: 50%;
+                }
+
+                .card-number {
+                    color: white;
+                    bottom: 40px;
+                    left: 20px;
+
+                    span {
+                        font-size: 1.1em;
+                    }
+                }
+
+                .extra-info {
+                    bottom: 10px;
+                    left: 20px;
+                    height: 20px;
+                    width: 220px;
+                    color: white;
+
+                    .holder-name {
+                        font-size: .7em;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                    }
+
+                    .expiry-date {
+                        font-size: 0.7em;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                    }
+                }
+            }
+
+            .backCard {
+                z-index: 3;
+                background-image: url(./images/bg-card-back.png);
+                background-size: cover;
+                background-position: center;
+                right: 25px;
+                top: 50px;
+
+                span {
+                    position: relative;
+                    left: 200px;
+                    top: 63px;
+                    font-size: .9em;
+
+                }
+            }
+        }
+
+        .bottom {
+            z-index: 4;
+            width: 100%;
+            height: 55%;
+            position: relative;
+            padding: 25px;
+
+            form {
+                width: 100%;
+                height: 100%;
+
+                * {
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+
+                label {
+                    display: inline;
+                    font-size: 0.8em;
+                    font-weight: 600;
+                    letter-spacing: 3px;
+                    margin-bottom: 10px;
+                }
+
+                input {
+                    outline: none;
+                    border-radius: 10px;
+                    height: 40px;
+                    padding: 10px;
+                    font-size: 1em;
+                    font-weight: 600;
+                }
+
+                .extra-info-feilds {
+                    height: 80px;
+
+                    * {
+                        display: inline;
+                    }
+
+                    input {
+                        display: inline-block;
+                        margin-right: 5px;
+                    }
+
+                    .cvc {
+                        margin-right: 50px;
+                    }
+
+                    .expiry-date {
+                        margin-right: 10px;
+                    }
+
+                    #expiry-date {
+                        width: 25%;
+                    }
+
+                    .expiry-date-yy {
+                        width: 25%;
+                    }
+
+                    #cvc {
+                        width: 40%;
+                    }
+                }
+
+                button {
+                    outline: none;
+                    width: 100%;
+                    height: 50px;
+                    margin-top: 25px;
+                    background-color: hsl(278, 68%, 11%);
+                    color: white;
+                    border-radius: 15px;
+                    font-size: 1.2em;
+                    font-weight: 600;
+
+                    &:hover {
+                        filter: brightness(1.5);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: $mobile-breakpoint) and (max-width: 1700px) {
+    .container {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .layer-1 {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+        .left {
+            height: 100%;
+            width: 35%;
+            background-image: url(./images/bg-main-desktop.png);
+            background-size: cover;
+        }
+
+        .right {
+            height: 100%;
+            width: 65%;
+        }
+    }
+
+    .layer-2 {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+
+        .top {
+            width: 35%;
+            height: 100%;
+            position: relative;
+
+            .card {
+                position: absolute;
+                width: 300px;
+                height: 150px;
+                border-radius: 15px;
+            }
+
+            .backCard {
+                background-image: url(./images/bg-card-back.png);
+                background-size: cover;
+                right: -150px;
+                top: 350px;
+
+                span {
+                    position: relative;
+                    left: 235px;
+                    top: 73px;
+                }
+            }
+
+            .frontCard {
+                background-image: url(./images/bg-card-front.png);
+                background-size: cover;
+                right: -75px;
+                top: 150px;
+
+                .info {
+                    position: absolute;
+                    left: 25px;
+                }
+
+                .white-circle {
+                    top: 15px;
+                    width: 30px;
+                    height: 30px;
+                    background-color: whitesmoke;
+                    border-radius: 50%;
+                }
+
+                .white-border-circle {
+                    top: 23px;
+                    left: 60px;
+                    width: 15px;
+                    height: 15px;
+                    border: 2px solid white;
+                    border-radius: 50%;
+                }
+
+                .card-number {
+                    color: white;
+                    bottom: 40px;
+                    left: 20px;
+
+                    span {
+                        font-size: 1.3em;
+                    }
+                }
+
+                .extra-info {
+                    bottom: 10px;
+                    left: 20px;
+                    height: 20px;
+                    width: 250px;
+                    color: white;
+
+                    .holder-name {
+                        font-size: .7em;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                    }
+
+                    .expiry-date {
+                        font-size: 0.7em;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            width: 50%;
+            height: 100%;
+            position: relative;
+
+            form {
+                position: absolute;
+                left: 5%;
+                top: 30%;
+                width: 310px;
+                height: 100%;
+
+                * {
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+
+                label {
+                    display: inline;
+                    font-size: 0.8em;
+                    font-weight: 600;
+                    letter-spacing: 3px;
+                    margin-bottom: 10px;
+                }
+
+                input {
+                    outline: none;
+                    border-radius: 10px;
+                    height: 40px;
+                    padding: 10px;
+                    font-size: 1em;
+                    font-weight: 600;
+                }
+
+                .extra-info-feilds {
+                    height: 80px;
+
+                    * {
+                        display: inline;
+                    }
+
+                    input {
+                        display: inline-block;
+                        margin-right: 5px;
+                    }
+
+                    .cvc {
+                        margin-right: 50px;
+                    }
+
+                    .expiry-date {
+                        margin-right: 10px;
+                    }
+
+                    #expiry-date {
+                        width: 25%;
+                    }
+
+                    .expiry-date-yy {
+                        width: 25%;
+                    }
+
+                    #cvc {
+                        width: 40%;
+                    }
+                }
+
+                button {
+                    outline: none;
+                    width: 100%;
+                    height: 50px;
+                    margin-top: 25px;
+                    background-color: hsl(278, 68%, 11%);
+                    color: white;
+                    border-radius: 15px;
+                    font-size: 1.2em;
+                    font-weight: 600;
+
+                    &:hover {
+                        filter: brightness(1.5);
+                    }
+                }
+            }
+        }
+    }
+}

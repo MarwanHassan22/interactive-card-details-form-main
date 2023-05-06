@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <!-- <script src="index.js" defer></script> -->
+  <title>Dom Manipulation</title>
+</head>
+<body>
+
+
+
+  <div class="container">
+    <div class="layer-1">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+
+    <div class="layer-2">
+      <div class="top">
+        <div class="card backCard"><span>000</span></div>
+        <div class="card frontCard">
+          <div class="info white-circle"></div>
+          <div class="info white-border-circle"></div>
+          <div class="info card-number"><span>0000 0000 0000 0000</span></div>
+          <div class="info extra-info">
+            <div class="holder-name"><span>JANE APPLESEED</span></div>
+            <div class="expiry-date">00/00</div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <form class="form">
+          <label for="name">CARDHOLDER NAME</label>
+          <input required id="name" type="text" placeholder="e.g.Jane Appleseed">
+          <label for="number">CARD NUMBER</label>
+          <input required id="number" type="text" placeholder="e.g.1234 5678 9123 0000">
+          <div class="extra-info-feilds">
+            <label class="expiry-date" for="expiry-date ">EXP.DATE (MM/YY)</label>
+            <label class="cvc" for="cvc">CVC</label>
+            <input required id="expiry-date" type="text" placeholder="MM">
+            <input required class="expiry-date-yy" type="text" placeholder="YY">
+            <input required id="cvc" type="text" placeholder="e.g. 123">
+            <button type="submit">Confirm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+</body>
+</html>
